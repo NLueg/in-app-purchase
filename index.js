@@ -96,13 +96,7 @@ module.exports.getService = function (receipt) {
         if (isUnityReceipt(parsed)) {
             return module.exports.UNITY;
         }
-        if (parsed.signature) {
-            return module.exports.GOOGLE;
-        } else if (receipt.purchaseToken) {
-            return module.exports.GOOGLE;
-        } else {
-            return module.exports.AMAZON;
-        }
+        return module.exports.GOOGLE;
     } catch (error) {
         var dotSplitedReceipt = receipt.split('.');
         if (dotSplitedReceipt.length === 2) {
