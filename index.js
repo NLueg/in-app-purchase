@@ -81,13 +81,7 @@ module.exports.getService = function (receipt) {
         if (isUnityReceipt(receipt)) {
             return module.exports.UNITY;
         }
-        if (receipt.signature) {
-            return module.exports.GOOGLE;
-        } else if (receipt.purchaseToken) {
-            return module.exports.GOOGLE;
-        } else {
-            return module.exports.AMAZON;
-        }
+        return module.exports.GOOGLE;
     }
     if (typeof receipt === 'string') {
         var characters = receipt.match(/\w/g) || '';
